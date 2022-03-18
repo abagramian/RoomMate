@@ -45,4 +45,4 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 By contributing, you agree that your contributions will be licensed under its MIT License.
 
 ## References
-This document was adapted from the open-source contribution guidelines from [briandk](https://gist.github.com/briandk/3d2e8b3ec8daf5a27a62)
+This document was adapted from the open-source contribution guidelines created by [briandk](https://gist.github.com/briandk/3d2e8b3ec8daf5a27a62)
