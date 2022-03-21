@@ -1,4 +1,4 @@
-<!-- <img src="/logo-designs/roommate_keyhole.png" alt="RoomMate" width="400"/>   -->
+<img src="/logo-designs/roommate_keyhole.png" alt="RoomMate" width="300"/>  
 
 #### Your best mate for planning your future room at RPI!
 RoomMate is a web-application project that serves as a utility for RPI students to customize the layout of their dorm room. Users will have the flexibility to collaboratively use a drag and drop functionality to arrange preset furniture items on the canvas. 
