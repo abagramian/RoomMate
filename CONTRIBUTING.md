@@ -7,6 +7,8 @@ We'd love to hear from you! Our goal is to make contributing easy and smooth, wh
 - Proposing new features
 - Becoming a maintainer
 
+Public Forum for comments/suggestions: https://forms.gle/JukdCZpSVd6ucQxm9
+
 ## We Develop with Github
 We use github to host code, track issues and feature requests, and accept pull requests.
 
