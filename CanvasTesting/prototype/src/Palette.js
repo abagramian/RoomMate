@@ -1,6 +1,7 @@
 import React from "react";
 
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "./constants";
+import ShapeButton from "./ShapeButton.js";
 
 const handleDragStart = (event) => {
   const type = event.target.dataset.shape;
@@ -30,6 +31,7 @@ export function Palette() {
   return (
     <aside className="palette">
       <h2>Shapes</h2>
+      <ShapeButton />
       <div
         className="shape rectangle"
         data-shape={SHAPE_TYPES.RECT}

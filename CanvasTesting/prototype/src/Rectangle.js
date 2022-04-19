@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useCallback } from "react";
-import { Rect as KonvaRectangle, Transformer } from "react-konva";
+import { Rect as KonvaRectangle, Transformer, Text, Group } from "react-konva";
 
 import { LIMITS } from "./constants";
 import { selectShape, transformRectangleShape, moveShape } from "./state";
@@ -52,21 +52,22 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
   );
 
   return (
-    <>
-      <KonvaRectangle
-        onClick={handleSelect}
-        onTap={handleSelect}
-        onDragStart={handleSelect}
-        ref={shapeRef}
-        {...shapeProps}
-        draggable
+    <Group
+      draggable
         dragBoundFunc = {(pos) => {
           return {
             // limit drag bounds for rectangles
             x: ((pos.x < 500 + 100 && pos.x > 0 + 100) ? pos.x : ((pos.x > 500 + 100) ? Math.min(pos.x, 500 + 100) : Math.max(pos.x, 0 + 100))),
             y: ((pos.y < 500 + 100 && pos.y > 0 + 100) ? pos.y : ((pos.y > 500 + 100) ? Math.min(pos.y, 500 + 100) : Math.max(pos.y, 0 + 100))),
           };
-        }}
+        }}>
+      <KonvaRectangle
+        onClick={handleSelect}
+        onTap={handleSelect}
+        onDragStart={handleSelect}
+        ref={shapeRef}
+        {...shapeProps}
+        
         onDragEnd={handleDrag}
         onTransformEnd={handleTransform}
       />
@@ -78,6 +79,7 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
           boundBoxFunc={boundBoxCallbackForRectangle}
         />
       )}
-    </>
+      <Text text={"dsfsd"} fill="#00000" align="center"/>
+    </Group>
   );
 }

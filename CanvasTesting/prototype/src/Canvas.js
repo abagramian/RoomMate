@@ -1,5 +1,5 @@
 import React, { useRef, useCallback } from "react";
-import { Layer, Rect, Stage } from "react-konva";
+import { Layer, Rect, Stage, Group, Text } from "react-konva";
 
 import {
   useShapes,
@@ -60,18 +60,18 @@ export function Canvas() {
         onClick={clearSelection}
       >
         <Layer>
-          {shapes.map(([key, shape]) => (
-            <Shape key={key} shape={{ ...shape, id: key }} />
-          ))}
-          <Rect
+        <Rect
           x={100}
           y={100}
           height={50}
           width={80}
           fill="#89b717"
           opacity={0.8}
-
           />
+          {shapes.map(([key, shape]) => (
+            <Shape key={key} shape={{ ...shape, id: key }} />
+          ))}
+          
         </Layer>
       </Stage>
     </main>
