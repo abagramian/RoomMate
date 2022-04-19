@@ -6,13 +6,13 @@
 
 `users(id*, username, email, password)`
 
-`plans(id, user_id)`
+`plans(id*, user_id)`
 
-`items(id, name, plan_id, is_preset, width, height, pos_left, pos_top, img_link)`
+`items(id*, name, plan_id, is_preset, width, height, pos_left, pos_top, img_link)`
 
-`list_items(id, name, list_id, is_checked)`
+`list_items(id*, name, list_id, is_checked)`
 
-`user_lists(id, user_id)`
+`user_lists(id*, user_id)`
 ## Description of tables
 
 RoomMate has many users. Each user has a user ID, username, email and password.
