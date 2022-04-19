@@ -36,7 +36,7 @@ function App() {
     // </>
     <div className="app">
       <div className="checkList">
-        <div className="title">Your CheckList:</div>
+        <div className="title">To-Get list:</div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
