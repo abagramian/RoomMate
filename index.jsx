@@ -1,26 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from "react-dom";
 import { ListViewComponent } from '@syncfusion/ej2-react-lists';
-//import "./styles.css";
-
-// //import {}
-// export default class App extends React.Component
-// {
-//     constructor()
-//     {
-//         super(...arguments);
-//         this.data = 
-//         [
-//             { text: 'test1', id:'1'}
-
-//         ];
-//     }
-//     render()
-//     {
-//         //return (
-//         //)
-//     }
-// }
 
 export default class App extends React.Component {
     constructor() {
