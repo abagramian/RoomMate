@@ -57,8 +57,8 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
         dragBoundFunc = {(pos) => {
           return {
             // limit drag bounds for rectangles
-            x: ((pos.x < 500 + 100 && pos.x > 0 + 100) ? pos.x : ((pos.x > 500 + 100) ? Math.min(pos.x, 500 + 100) : Math.max(pos.x, 0 + 100))),
-            y: ((pos.y < 500 + 100 && pos.y > 0 + 100) ? pos.y : ((pos.y > 500 + 100) ? Math.min(pos.y, 500 + 100) : Math.max(pos.y, 0 + 100))),
+            x: ((pos.x < 500 && pos.x > 0) ? pos.x : ((pos.x > 500) ? Math.min(pos.x, 500) : Math.max(pos.x, 0))),
+            y: ((pos.y < 500 && pos.y > 0) ? pos.y : ((pos.y > 500) ? Math.min(pos.y, 500) : Math.max(pos.y, 0))),
           };
         }}>
       <KonvaRectangle
@@ -79,7 +79,8 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
           boundBoxFunc={boundBoxCallbackForRectangle}
         />
       )}
-      <Text text={"dsfsd"} fill="#00000" align="center"/>
+      <Text text={"dsfsd"} fill="#00000" wrap="char" align="center" x={100} y={140} width={150} height={10}/>
+      <Text text={"dsfsd"} fill="#00000" wrap="char" align="center" x={100} y={160} width={150} height={10}/>
     </Group>
   );
 }

@@ -9,7 +9,7 @@ import {
 class ShapeButton extends React.Component {
    constructor(props) {
      super(props);
-     this.state = {isToggleOn: true};
+   //   this.state = {isToggleOn: true};
  
      // This binding is necessary to make `this` work in the callback
      this.handleClick = this.handleClick.bind(this);
@@ -18,9 +18,8 @@ class ShapeButton extends React.Component {
    handleClick() {
 
       this.setState(prevState => ({
-         isToggleOn: !prevState.isToggleOn
+         // isToggleOn: !prevState.isToggleOn
       }));
-
 
 
       createRectangle({
@@ -32,7 +31,7 @@ class ShapeButton extends React.Component {
    render() {
      return (
        <button onClick={this.handleClick}>
-         {this.state.isToggleOn ? 'ON' : 'OFF'}
+         Rectangle
        </button>
      );
    }
