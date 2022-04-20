@@ -4,32 +4,53 @@ _updated to support use of Firebase instead of SQLite_
 
 ## List of collections in the database
 __plans__
+
 document [auto-generated ID]
+
 &emsp;name: "[name of plan]"
+
 &emsp;creator_uid: "[UID of user who created plan]"
+
 &emsp;canvas_width: [# in pixels]
+
 &emsp;canvas_height: [# in pixels]
 
 __items__
+
 document [auto-generated ID]
+
 &emsp;item_id: "[item identifier]"
+
 &emsp;name: "[name of item]"
+
 &emsp;plan_id: "[plan id (document) item is in]"
+
 &emsp;is_preset: [true/false]
+
 &emsp;width: [# in pixels]
+
 &emsp;height: [# in pixels]
+
 &emsp;position_left: [location on x-axis]
+
 &emsp;position_top: [location on y-axis]
+
 &emsp;image_link: [reference to image]
 
 __user_lists__
+
 document [auto-generated ID]
+
 &emsp;user_uids: "[array of users who have access to this list]"
 
 __list_items__
+
 document [auto-generated ID]
+
 &emsp;name: "[name of item]"
+
 &emsp;list_id: "[list id (document) item is in]"
+
 &emsp;is_checked: [true/false]
 
 ## Users and Firebase
