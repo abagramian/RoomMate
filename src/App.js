@@ -2,6 +2,7 @@ import './App.scss';
 import React, { useState } from "react";
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+//import ToGet from './components/ToGet'
 
 function App() {
   // created by following tutorial: https://contactmentor.com/checkbox-list-react-js-example/
@@ -26,6 +27,8 @@ function App() {
 
   // var isChecked = (item) =>
   //   checked.includes(item) ? "checked-item" : "not-checked-item";
+
+  //<Route path="/" element={<ToGet />} />
 
   return (
     <>

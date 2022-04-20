@@ -21,7 +21,7 @@ function ToGetItem({ toget, handleChangeProps, deleteToGetProps }) {
         onChange={() => handleChangeProps(toget.id)}
       />
       <button type="button" onClick={() => deleteToGetProps(toget.id)}>
-      <i class="fa fa-trash"></i> Delete
+      <i class="fa-solid fa-trash"></i> Delete
       </button>
       <span style={toget.completed ? completedStyle : null}>
         {toget.title}
