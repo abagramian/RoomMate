@@ -17,6 +17,15 @@ The above link provides a tutorial on working with a Canvas in React. This can b
 * Modify the left Palette to use buttons instead of draggable shapes with some preset room items (bed, desk, etc)
 * Display scaled informationa about shapes the canvas (for example, a shape on the canvas would display the name of the item it represents and its size in ft'in''
 
+UPDATE 4/20 ~12PM:
+
+Achieved from yesterday:
+* Left pallette uses button instead of draggable shapes. Working on dynamically creating buttons that insert rectangles with different labels and sizes based on what the rectangle is supposed to represent.
+
+In Progress:
+* Figuring out how to properly align text so that it stays centered when a shape is resized. Also need to figure out how to dynamically generate text to represent current size of its parent shape.
+* Also figuring out how to transfer information from a popup to the drag bound functions (functions that bar shapes from going "off grid") to effectively create a canvas of a specified size. 
+
 
 
 
