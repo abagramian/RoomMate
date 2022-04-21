@@ -1,12 +1,12 @@
 import React from 'react';
+import Login from '../components/LoginPage'
+import '../components/LoginPage/index.scss';
 
-import Login from '../components/Login';
-// import '../styles/loginpage.css';
 
 const LoginPage = () => {
-    return (
+    return(
         <Login />
     );
-}
+};
 
 export default LoginPage;

@@ -1,5 +1,19 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  form:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: 1;
+    background-image: white;
   }
   
   .item {
@@ -33,11 +47,6 @@
   }
 
   /* ----- from original index.css -----  */
-  /** {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }*/
   
   .container {
     display: flex;

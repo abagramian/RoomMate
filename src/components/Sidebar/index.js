@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Sidebar = () => (
     <div className='nav-bar'>
-        <Link className='logo' to='/'>
+        <Link className='logo' to='/home'>
             <img src={RoomMateLogo} alt="logo" />
         </Link>
         {/* <nav>

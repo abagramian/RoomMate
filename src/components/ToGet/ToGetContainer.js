@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
-import ToGetList from './ToGetList';
+import Sidebar from '../Sidebar'
 import Header from './Header';
+import ToGetList from './ToGetList';
 import InputToGet from './InputToGet';
 import styles from './ToGetItem.module.css';
+import './ToGetItem.module.css';
 
 class ToGetContainer extends React.Component {
   constructor(props) {
@@ -58,17 +60,22 @@ class ToGetContainer extends React.Component {
   render() {
     const myState = this.state;
     return (
-      <div className={styles.container}>
-        <div className={styles.inner}>
-          <Header />
-          <InputToGet addToGetProps={this.addToGetItem} />
-          <ToGetList
-            togets={myState.togets}
-            handleChangeProps={this.handleChange}
-            deleteToGetProps={this.delToGet}
-          />
+      <>
+      <Sidebar />
+      <div id="page-wrap">
+        <div className={styles.container}>
+          <div className={styles.inner}>
+            <Header />
+            <InputToGet addToGetProps={this.addToGetItem} />
+            <ToGetList
+              togets={myState.togets}
+              handleChangeProps={this.handleChange}
+              deleteToGetProps={this.delToGet}
+            />
+          </div>
         </div>
       </div>
+      </>
     );
   }
 }
