@@ -1,6 +1,6 @@
 import React from "react";
 
-import {createCanvasRectangle} from "./state";
+import {createCanvasRectangle, resizeCanvas} from "./state";
 
 class CanvasButton extends React.Component {
    constructor(props) {
@@ -31,7 +31,9 @@ class CanvasButton extends React.Component {
 
       } else {
         // TODO: Resize canvas
-        alert("Resize coming soon!")
+        const newcwidth = prompt("Enter new canvas width:")
+        const newcheight = prompt("Enter new canvas height:")
+        resizeCanvas(newcwidth, newcheight);
         
       }
 

@@ -47,7 +47,7 @@ export const createRectangle = ({ x, y, w, h }) => {
 
 export const createCanvasRectangle = ({ x, y, width, height }) => {
   setState((state) => {
-    state.shapes[nanoid()] = {
+    state.shapes["CANVASID"] = {
       type: "CANVAS",
       width: width, //TODO: replace with user specified width
       height: height, //TODO: replace with user specified height
@@ -99,6 +99,19 @@ export const resizeShape = (id, w, h) => {
     }
   })
 }
+
+export const resizeCanvas = (w, h) => {
+  setState((state) => {
+    const shape = state.shapes["CANVASID"];
+
+    if (shape) {
+      shape.width = w;
+      shape.height = h;
+    }
+  })
+}
+
+
 
 export const updateAttribute = (attr, value) => {
   setState((state) => {
