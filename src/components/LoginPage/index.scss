@@ -15,12 +15,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  input, button {
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-  }
+  // -------------------- USED FOR THE WELCOME PAGE (deleted to fix checklist) -------
+  // input, button {
+  //   appearance: none;
+  //   background: none;
+  //   border: none;
+  //   outline: none;
+  // }
   
   .Login {
     height: 100vh;
