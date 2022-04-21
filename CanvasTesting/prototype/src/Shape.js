@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 
 import { SHAPE_TYPES } from "./constants";
 import { useShapes } from "./state";
-import { Circle } from "./Circle";
 import { Rectangle } from "./Rectangle";
+import { CanvasRectangle } from "./CanvasRectangle";
 
 export function Shape({ shape }) {
   const isSelectedSelector = useCallback(
@@ -14,8 +14,8 @@ export function Shape({ shape }) {
 
   if (shape.type === SHAPE_TYPES.RECT) {
     return <Rectangle {...shape} isSelected={isSelected} />;
-  } else if (shape.type === SHAPE_TYPES.CIRCLE) {
-    return <Circle {...shape} isSelected={isSelected} />;
+  } else if (shape.type === "CANVAS") {
+    return <CanvasRectangle />
   }
 
   return null;

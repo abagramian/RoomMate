@@ -46,18 +46,21 @@ export const createRectangle = ({ x, y }) => {
   });
 };
 
-export const createCircle = ({ x, y }) => {
+export const createCanvasRectangle = ({ x, y }) => {
   setState((state) => {
     state.shapes[nanoid()] = {
-      type: SHAPE_TYPES.CIRCLE,
-      radius: DEFAULTS.CIRCLE.RADIUS,
-      fill: DEFAULTS.CIRCLE.FILL,
-      stroke: DEFAULTS.CIRCLE.STROKE,
+      type: "CANVAS",
+      width: 100, //TODO: replace with specified width
+      height: 100, //TODO: replace with specified height
+      fill: '#C1C1C1',
+      stroke: DEFAULTS.RECT.STROKE,
+      rotation: DEFAULTS.RECT.ROTATION,
       x,
       y,
-    };
+    }; 
   });
 };
+
 
 export const selectShape = (id) => {
   setState((state) => {
@@ -130,29 +133,3 @@ export const transformRectangleShape = (node, id, event) => {
   });
 };
 
-export const transformCircleShape = (node, id, event) => {
-  // transformer is changing scale of the node
-  // and NOT its width or height
-  // but in the store we have only width and height
-  // to match the data better we will reset scale on transform end
-  const scaleX = node.scaleX();
-
-  // we will reset the scale back
-  node.scaleX(1);
-  node.scaleY(1);
-
-  setState((state) => {
-    const shape = state.shapes[id];
-
-    if (shape) {
-      shape.x = node.x();
-      shape.y = node.y();
-
-      shape.radius = clamp(
-        (node.width() * scaleX) / 2,
-        LIMITS.CIRCLE.MIN,
-        LIMITS.CIRCLE.MAX
-      );
-    }
-  });
-};
