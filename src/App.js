@@ -39,23 +39,23 @@ function App() {
   }
 
   return (
-    // <div className="App">
-    //   {(user.email != "") ? (
-    //     <div className="welcome">
-    //       <h2>Welcome, <span>{user.name}</span></h2>
-    //       <button onClick={Logout}>Logout</button>
-    //     </div>
-    //   ) : (
-    //     <LoginForm Login={Login} error={error} />
-    //   )}
-    // </div>
+    <div className="App">
+      {(user.email != "") ? (
+        <div className="welcome">
+          <h2>Welcome, <span>{user.name}</span></h2>
+          <button onClick={Logout}>Logout</button>
+        </div>
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
+    </div>
 
-    <>
-    <Routes>
-      <Route path="/home" element={<Layout />} />
-      <Route path="/login" element={<LoginForm />} />
-    </Routes>
-    </>
+    // <>
+    // <Routes>
+    //   <Route path="/home" element={<Layout />} />
+    //   <Route path="/login" element={<LoginForm />} />
+    // </Routes>
+    // </>
   );
 }
 
