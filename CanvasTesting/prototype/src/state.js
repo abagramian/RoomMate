@@ -45,12 +45,12 @@ export const createRectangle = ({ x, y }) => {
   });
 };
 
-export const createCanvasRectangle = ({ x, y }) => {
+export const createCanvasRectangle = ({ x, y, width, height }) => {
   setState((state) => {
     state.shapes[nanoid()] = {
       type: "CANVAS",
-      width: 100, //TODO: replace with user specified width
-      height: 100, //TODO: replace with user specified height
+      width: width, //TODO: replace with user specified width
+      height: height, //TODO: replace with user specified height
       fill: '#C1C1C1',
       stroke: DEFAULTS.RECT.STROKE,
       rotation: DEFAULTS.RECT.ROTATION,

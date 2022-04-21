@@ -4,14 +4,14 @@ import React from "react";
 import { Rect, Group } from "react-konva";
 import { DEFAULTS } from "./constants";
 
+class CanvasRectangle extends React.Component {
 
-export function CanvasRectangle({ id, isSelected, type, ...shapeProps }) {
-
-  return (
-    <Group>
+  render() {
+    return (
+      <Group>
       <Rect
-      width= {500} //TODO: replace with specified width
-      height= {500} //TODO: replace with specified height
+      width={this.props.width}
+      height={this.props.height}
       fill= '#C1C1C1'
       stroke= {DEFAULTS.RECT.STROKE}
       rotation= {DEFAULTS.RECT.ROTATION}
@@ -20,5 +20,8 @@ export function CanvasRectangle({ id, isSelected, type, ...shapeProps }) {
         
       />
       </Group>
-  );
+    )
+  }
 }
+
+export default CanvasRectangle;

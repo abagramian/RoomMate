@@ -24,7 +24,7 @@ class ShapeButton extends React.Component {
  
    render() {
      return (
-       <button onClick={this.handleClick}>
+       <button className={"palette-button"} onClick={this.handleClick}>
          Rectangle
        </button>
      );

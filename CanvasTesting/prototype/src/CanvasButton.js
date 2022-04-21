@@ -14,13 +14,25 @@ class CanvasButton extends React.Component {
    handleClick() {
 
       if (!this.state.pressed) {
+
+        const cwidth = prompt('Enter width:');
+        this.setState({cwidth: cwidth})
+
+        const cheight = prompt('Enter width:');
+        this.setState({cwidth: cheight})
+
       createCanvasRectangle({
-        // TODO: Create unmovable canvas of specified size
          x: 100,
          y: 100,
+         width: cwidth,
+         height: cheight
+
        });
+
       } else {
         // TODO: Resize canvas
+        alert("Resize coming soon!")
+        
       }
 
        // Present popup to enter canvas measurements and set stage to 
@@ -34,11 +46,13 @@ class CanvasButton extends React.Component {
  
    render() {
      return (
-       <button onClick={this.handleClick}>
-         Create Canvas
+       <button className={"palette-button"} onClick={this.handleClick}>
+         {!this.state.pressed ? "Create Canvas" : "Resize Canvas"}
        </button>
      );
    }
  }
  
  export default CanvasButton;
+ 
+ 
