@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from './ToGetItem.module.css';
 
 class InputToGet extends PureComponent {
   constructor(props) {
@@ -32,11 +33,11 @@ class InputToGet extends PureComponent {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="form-container"
+        className={styles.formContainer}
       >
         <input
           type="text"
-          className="input-text"
+          className={styles.inputText}
           placeholder="Add item..."
           value={myState.title}
           name="title"
@@ -44,7 +45,7 @@ class InputToGet extends PureComponent {
         />
         <button
           type="submit"
-          className="input-submit"
+          className={styles.inputSubmit}
         >
           Submit
         </button>
