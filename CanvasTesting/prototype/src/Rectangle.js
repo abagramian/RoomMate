@@ -12,7 +12,7 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
       // TODO: provide popup to change size (delete rectangle and replace it with new size?)
       // alert(id);
 
-      alert(shapeRef.current.width());
+      //alert(shapeRef.current.width());
     },
     [id]
   );
