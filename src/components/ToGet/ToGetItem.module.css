@@ -4,7 +4,11 @@
     padding: 0;
   }
 
-  form:after {
+  body{
+    background-color: white;
+  }
+
+  /* form:after {
     content: '';
     display: block;
     position: absolute;
@@ -14,7 +18,7 @@
     bottom: -5px;
     z-index: 1;
     background-image: white;
-  }
+  } */
   
   .item {
     font-size: 1.2rem;
