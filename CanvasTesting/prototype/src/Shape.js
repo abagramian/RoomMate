@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { SHAPE_TYPES } from "./constants";
 import { useShapes } from "./state";
 import { Rectangle } from "./Rectangle";
-import  CanvasRectangle  from "./CanvasRectangle";
+import CanvasRectangle from "./CanvasRectangle";
 
 export function Shape({ shape }) {
   const isSelectedSelector = useCallback(

@@ -30,13 +30,13 @@ export const reset = () => {
   useShapes.set(baseState);
 };
 
-export const createRectangle = ({ x, y }) => {
+export const createRectangle = ({ x, y, w, h }) => {
   setState((state) => {
     state.shapes[nanoid()] = {
       type: SHAPE_TYPES.RECT,
-      width: DEFAULTS.RECT.WIDTH,
-      height: DEFAULTS.RECT.HEIGHT,
-      fill: DEFAULTS.RECT.FILL,
+      width: w,
+      height: h,
+      fill: "#FFFFFF",
       stroke: DEFAULTS.RECT.STROKE,
       rotation: DEFAULTS.RECT.ROTATION,
       x,
@@ -87,6 +87,18 @@ export const moveShape = (id, event) => {
     }
   });
 };
+
+export const resizeShape = (id, w, h) => {
+
+  setState((state) => {
+    const shape = state.shapes[id];
+
+    if (shape) {
+      shape.width = w;
+      shape.height = h;
+    }
+  })
+}
 
 export const updateAttribute = (attr, value) => {
   setState((state) => {

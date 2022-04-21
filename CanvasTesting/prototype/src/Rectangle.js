@@ -1,14 +1,18 @@
 import React, { useRef, useCallback } from "react";
 import { Rect, Text, Group } from "react-konva";
 
-import { moveShape } from "./state";
+import { moveShape, resizeShape } from "./state";
 
 export function Rectangle({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
 
   const handleClick = useCallback(
-    () => {
-      alert("Resizing of elements coming soon!")
+    (event) => {
+      const nrwidth = prompt("Enter new width: ")
+      const nrheight = prompt("Enter new height: ")
+
+      resizeShape(id, nrwidth, nrheight);
+
     },
     [id]
   );

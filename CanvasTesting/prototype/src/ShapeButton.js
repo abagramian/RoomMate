@@ -16,9 +16,14 @@ class ShapeButton extends React.Component {
          // isToggleOn: !prevState.isToggleOn
       }));
 
+      const nrwidth = prompt("Enter new width: ")
+      const nrheight = prompt("Enter new height: ")
+
       createRectangle({
          x: 100,
          y: 100,
+         w: nrwidth,
+         h: nrheight
        });
    }
  
