@@ -1,38 +1,18 @@
-import React, { useRef, useEffect, useCallback } from "react";
-import { Rect as KonvaRectangle, Transformer, Text, Group } from "react-konva";
+import React, { useRef, useCallback } from "react";
+import { Rect, Text, Group } from "react-konva";
 
-import { LIMITS } from "./constants";
-import { selectShape, transformRectangleShape, moveShape } from "./state";
-
-const boundBoxCallbackForRectangle = (oldBox, newBox) => {
-  // limit resize
-  if (
-    newBox.width < LIMITS.RECT.MIN ||
-    newBox.height < LIMITS.RECT.MIN ||
-    newBox.width > LIMITS.RECT.MAX ||
-    newBox.height > LIMITS.RECT.MAX
-  ) {
-    return oldBox;
-  }
-  return newBox;
-};
+import { moveShape } from "./state";
 
 export function Rectangle({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
-  const transformerRef = useRef();
-
-  useEffect(() => {
-    if (isSelected) {
-      transformerRef.current.nodes([shapeRef.current]);
-      transformerRef.current.getLayer().batchDraw();
-    }
-  }, [isSelected]);
-
   const handleSelect = useCallback(
     (event) => {
       event.cancelBubble = true;
 
-      selectShape(id);
+      // TODO: provide popup to change size (delete rectangle and replace it with new size?)
+      // alert(id);
+
+      alert(shapeRef.current.width());
     },
     [id]
   );
@@ -44,16 +24,16 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
-  const handleTransform = useCallback(
-    (event) => {
-      transformRectangleShape(shapeRef.current, id, event);
-    },
-    [id]
-  );
-
   return (
     <Group
       draggable
+      onClick={handleSelect}
+      onTap={handleSelect}
+      ref={shapeRef}
+      width={shapeProps.width}
+      height={shapeProps.height}
+ 
+      onDragEnd={handleDrag}
         dragBoundFunc = {(pos) => {
           return {
             // limit drag bounds for rectangles
@@ -62,26 +42,20 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
             y: ((pos.y  + shapeRef.current.height() < 500 && pos.y > 0) ? pos.y : ((pos.y + shapeRef.current.height() > 500) ? Math.min(pos.y, 500 - shapeRef.current.height()) : Math.max(pos.y, 0))),
           };
         }}>
-      <KonvaRectangle
-        onClick={handleSelect}
-        onTap={handleSelect}
-        onDragStart={handleSelect}
-        ref={shapeRef}
-        {...shapeProps}
-        
-        onDragEnd={handleDrag}
-        onTransformEnd={handleTransform}
+      <Rect
+       fill={shapeProps.fill}
+       stroke={shapeProps.stroke}
+
+       rotation={shapeProps.rotation}
+       width={shapeProps.width}
+      height={shapeProps.height}
+      ref={shapeRef}
+ 
+      
       />
-      {isSelected && (
-        <Transformer
-          anchorSize={5}
-          borderDash={[6, 2]}
-          ref={transformerRef}
-          boundBoxFunc={boundBoxCallbackForRectangle}
-        />
-      )}
-      <Text text={"dsfsd"} fill="#00000" wrap="char" align="center" x={100} y={140} width={150} height={10}/>
-      <Text text={"dsfsd"} fill="#00000" wrap="char" align="center" x={100} y={160} width={150} height={10}/>
+   
+      <Text text={"Item name"} fill="#00000" wrap="char" align="center" x={10} y={20}/>
+      <Text text={"Item size"} fill="#00000" wrap="char" align="center" x={10} y={30}/>
     </Group>
   );
 }

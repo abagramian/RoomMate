@@ -15,8 +15,8 @@ export function CanvasRectangle({ id, isSelected, type, ...shapeProps }) {
       fill= '#C1C1C1'
       stroke= {DEFAULTS.RECT.STROKE}
       rotation= {DEFAULTS.RECT.ROTATION}
-      x={100}
-      y={100}
+      x={0}
+      y={0}
         
       />
       </Group>
