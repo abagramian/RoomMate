@@ -22,7 +22,7 @@ Roadblocks I hit so far:
 * Grouping text with shapes proved to be very difficult, I spent a lot of time on it. I solved the issue by reading more documentation and examples and learned that my method of implentation was problematic. I am still unsure of how I will be able to maintain a consistent location for the text when rectangles resize.
 
 
-### UPDATE 4/20 ~12PM:
+### UPDATE 4/20:
 
 Achieved from yesterday:
 * Left pallette uses button instead of draggable shapes. Working on dynamically creating buttons that insert rectangles with different labels and sizes based on what the rectangle is supposed to represent.
