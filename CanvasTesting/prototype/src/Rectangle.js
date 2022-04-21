@@ -57,9 +57,9 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
         dragBoundFunc = {(pos) => {
           return {
             // limit drag bounds for rectangles
-            //TODO: Figure out how to keep full rectangle (assuming dynamic sizes) within bounds, not just top left x and y coords
-            x: ((pos.x < 500 && pos.x > 0) ? pos.x : ((pos.x > 500) ? Math.min(pos.x, 500) : Math.max(pos.x, 0))),
-            y: ((pos.y < 500 && pos.y > 0) ? pos.y : ((pos.y > 500) ? Math.min(pos.y, 500) : Math.max(pos.y, 0))),
+            //TODO: replace instances of 500 with dynamic canvas size
+            x: ((pos.x + shapeRef.current.width() < 500 && pos.x > 0) ? pos.x : ((pos.x + shapeRef.current.width()  > 500) ? Math.min(pos.x, 500 - shapeRef.current.width()) : Math.max(pos.x, 0))),
+            y: ((pos.y  + shapeRef.current.height() < 500 && pos.y > 0) ? pos.y : ((pos.y + shapeRef.current.height() > 500) ? Math.min(pos.y, 500 - shapeRef.current.height()) : Math.max(pos.y, 0))),
           };
         }}>
       <KonvaRectangle
