@@ -10,6 +10,7 @@ const Header = () => {
     <header style={headerStyle}>
       <h1
         style={{
+          fontFamily: 'Akshar',
           fontSize: '6rem',
           fontWeight: '600',
           marginBottom: '2rem',

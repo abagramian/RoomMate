@@ -2,6 +2,7 @@ import './App.scss';
 import React, { useState } from "react";
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import Sidebar from './components/Sidebar'
 //import ToGet from './components/ToGet'
 
 function App() {
@@ -36,24 +37,6 @@ function App() {
       <Route path="/" element={<Layout />} />
     </Routes>
     </>
-    // <div className="app">
-    //   <div className="checkList">
-    //     <div className="title">To-Get list:</div>
-    //     <div className="list-container">
-    //       {checkList.map((item, index) => (
-    //         <div key={index}>
-    //           <input value={item} type="checkbox" onChange={handleCheck} />
-    //           <span className={isChecked(item)}>{item}</span>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-      
-    //   <div>
-    //     {`Items checked are: ${checkedItems}`}
-    //   </div>
-
-    // </div>
   );
 }
 
