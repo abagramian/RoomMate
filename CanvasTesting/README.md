@@ -40,5 +40,19 @@ While working on the above items, I ran into some roadblocks.
 * The "save" option works to some extent in that it saves the elements on a canvas, but it does not save their positions. I suspect that this is a result of how I am initializing elements on the canavs when the "rectangle" button is clicked, but have not confirmed yet. I did have the ability to save positions at one point, but during that time rectangles would not display - only the text grouped with the rectangles. I am also not sure if we will be able to connect the database to the extent of saving canvas layouts for individual users, as all of our group members are very unfamiiar with connecting Firebase to React/JS.
 
 
+### UPDATE 2 4/21:
+
+**Accomplised**
+
+* Both canvas resizing and canvas element (rectangle) resizing are implemented. Bounds are fully functional upon both canvas resizing and rectangle resizing. All elements on the canvas are saved upon clicking the "save" button and persist via local storage. In the future, we would like to change this to firebase to allow users to access their layouts via the cloud. 
+
+**In the works**
+
+* Instead of having one single "rectangle" button, I would like to dynamically read a list of JSON objects that represent preset objects that should appear on the palette under "Items". I would plan to dynamically generate buttons from this JSON file, with each button having a default name and size that could be customized for the user.
+* I would like to display the size of each object dynamically as they are generated and resized.
+* On a similar note, a "scale" needs to be implemented so that a user can enter sizing information in ft, in that can be translated down to scaled pixel representation. 
+* We need a JSON file containing information for preset RPI Dorm layouts that can be read into the canvas. These would serve as a convenience to the user so that they can easily work around objects that will be there when they move in, such as beds and desks. 
+
+
 
 
