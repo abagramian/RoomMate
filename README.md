@@ -16,8 +16,8 @@ RoomMate is a web-application project that serves as a utility for RPI students 
 * Open-source, free to use, install on your own hardware
 
 
-### How to Run RoomMate
-* Clone repository locally 
+### Run RoomMate On Local Machine
+* Clone repository locally
 * Ensure you have the latest version of `npm`
 * Run `npm install` to install required modules
 * Run `npm start`
@@ -28,7 +28,9 @@ RoomMate is a web-application project that serves as a utility for RPI students 
 
 **4/21/2022**  We have successfully created a login page (only works with dummy credentials for now), a canvas page, and a checklist page. We are working on linking the pages together using the react-router-dom library. For the canvas component, we're working on adding more customizable features such as resizing the items. We are also in the process of adding the checklist component to our sidebar.
 
-
+** STILL IN EARLY STAGES OF DEVELOPMENT **
+To-do checklist implementation - branch: main-test
+Drag & drop canvas implementation - branch: canvas
 
 ### How To Contribute
  Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
