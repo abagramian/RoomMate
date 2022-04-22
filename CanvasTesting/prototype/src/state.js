@@ -17,11 +17,19 @@ export const useShapes = createStore(() => {
 
   return { ...baseState, shapes: initialState ?? {} };
 });
+
+export const useBounds = createStore(() => {
+  const initialState = JSON.parse(localStorage.getItem(APP_NAMESPACE + "CanvasBorder"));
+
+  return { ...baseState, shapes: initialState ?? {} };
+});
 const setState = (fn) => useShapes.set(produce(fn));
 
 export const saveDiagram = () => {
-  const state = useShapes.get();
-  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
+  const state_shapes = useShapes.get();
+  const state_bounds = useBounds.get();
+  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state_shapes.shapes));
+  localStorage.setItem(APP_NAMESPACE + "CanvasBorder", JSON.stringify(state_bounds));
 };
 
 export const reset = () => {
@@ -82,7 +90,6 @@ export const clearSelection = () => {
   });
 };
 
-// TODO: WHY ISNT THIS SAVING SHAPE LOCATIONS
 export const moveShape = (id, x, y) => {
 
   setState((state) => {

@@ -31,6 +31,8 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
       ref={shapeRef}
       width={shapeProps.width}
       height={shapeProps.height}
+      x={shapeProps.x}
+      y={shapeProps.y}
  
       onDragEnd={handleDrag}
         dragBoundFunc = {(pos) => {
@@ -50,6 +52,7 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
        width={shapeProps.width}
       height={shapeProps.height}
       ref={shapeRef}
+      
       />
    
       <Text text={"Item name"} fill="#00000" wrap="char" align="center" x={30} y={20}/>
