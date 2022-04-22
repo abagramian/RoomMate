@@ -34,7 +34,7 @@ export const saveDiagram = () => {
 
 export const reset = () => {
   localStorage.removeItem(APP_NAMESPACE);
-
+  localStorage.removeItem(APP_NAMESPACE + "CanvasBorder");
   useShapes.set(baseState);
 };
 

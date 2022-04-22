@@ -38,8 +38,7 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
         dragBoundFunc = {(pos) => {
         
           return {
-            // limit drag bounds for rectangles
-            //TODO: replace instances of 500 with dynamic canvas size
+            // limit drag bounds for rectangles, this method only supports square/rectangular
             x: ((pos.x + Number(shapeProps.width) < shapeProps.cbw && pos.x > 0) ? pos.x : ((pos.x + Number(shapeProps.width)  > shapeProps.cbw) ? Math.min(pos.x, shapeProps.cbw - Number(shapeProps.width)) : Math.max(pos.x, 0))),
             y: ((pos.y  + Number(shapeProps.height) < shapeProps.cbh && pos.y > 0) ? pos.y : ((pos.y + Number(shapeProps.height) > shapeProps.cbh) ? Math.min(pos.y, shapeProps.cbh - Number(shapeProps.height)) : Math.max(pos.y, 0))),
           };
