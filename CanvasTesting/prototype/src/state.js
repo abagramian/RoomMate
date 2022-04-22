@@ -1,6 +1,7 @@
 import { createStore } from "@halka/state";
 import produce from "immer";
 import { nanoid } from "nanoid";
+import { shape } from "prop-types";
 
 import { SHAPE_TYPES, DEFAULTS } from "./constants";
 
@@ -20,7 +21,6 @@ const setState = (fn) => useShapes.set(produce(fn));
 
 export const saveDiagram = () => {
   const state = useShapes.get();
-
   localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
 };
 
@@ -41,23 +41,32 @@ export const createRectangle = ({ x, y, w, h }) => {
       rotation: DEFAULTS.RECT.ROTATION,
       x,
       y,
+      cbw: Number(JSON.parse(localStorage.getItem(APP_NAMESPACE + "CanvasBorder"))["canvasBorderW"]),
+      cbh: Number(JSON.parse(localStorage.getItem(APP_NAMESPACE + "CanvasBorder"))["canvasBorderH"]),
     };
   });
+  const state = useShapes.get();
+  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
 };
 
 export const createCanvasRectangle = ({ x, y, width, height }) => {
   setState((state) => {
     state.shapes["CANVASID"] = {
       type: "CANVAS",
-      width: width, //TODO: replace with user specified width
-      height: height, //TODO: replace with user specified height
+      width: width, 
+      height: height, 
       fill: '#C1C1C1',
       stroke: DEFAULTS.RECT.STROKE,
       rotation: DEFAULTS.RECT.ROTATION,
       x,
-      y,
+      y
     }; 
   });
+
+  var state = useShapes.get();
+  // Get most recent version of shapes array and update localStorage
+  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
+  localStorage.setItem(APP_NAMESPACE + "CanvasBorder", JSON.stringify({canvasBorderW: width, canvasBorderH: height}))
 };
 
 
@@ -74,16 +83,14 @@ export const clearSelection = () => {
 };
 
 // TODO: WHY ISNT THIS SAVING SHAPE LOCATIONS
-export const moveShape = (id, event) => {
-  // alert(event.target.x());
-  // alert(id);
+export const moveShape = (id, x, y) => {
 
   setState((state) => {
     const shape = state.shapes[id];
 
     if (shape) {
-      shape.x = event.target.x();
-      shape.y = event.target.y();
+      shape.x = x;
+      shape.y = y;
     }
   });
 };
@@ -109,16 +116,33 @@ export const resizeCanvas = (w, h) => {
       shape.height = h;
     }
   })
+
+  var state = useShapes.get();
+  // Get most recent version of shapes array and update localStorage
+  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
+  localStorage.setItem(APP_NAMESPACE + "CanvasBorder", JSON.stringify({canvasBorderW: w, canvasBorderH: h}))
+
+  // Need to update all rectangles with new bounds
+  resetRectBounds(w, h);
 }
 
+function resetRectBounds(w, h) {
+  // Update all rectangles with canvas border size to prevent going off canvas
+  var state = useShapes.get();
 
+  for (const shapeID in state.shapes) {
+    console.log(state.shapes[shape])
+    if (shapeID !== "CANVASID") {
+      setState((state) => {
+        const shape = state.shapes[shapeID]
 
-export const updateAttribute = (attr, value) => {
-  setState((state) => {
-    const shape = state.shapes[state.selected];
+        if (shape) {
+          shape["cbw"] = Number(JSON.parse(localStorage.getItem(APP_NAMESPACE+ "CanvasBorder"))["canvasBorderW"]);
+          shape["cbh"] = Number(JSON.parse(localStorage.getItem(APP_NAMESPACE+ "CanvasBorder"))["canvasBorderH"]);
+        }
+      })
 
-    if (shape) {
-      shape[attr] = value;
     }
-  });
-};
+  }
+
+}

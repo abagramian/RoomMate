@@ -4,8 +4,7 @@ import { Rect, Text, Group } from "react-konva";
 import { moveShape, resizeShape } from "./state";
 
 export function Rectangle({ id, isSelected, type, ...shapeProps }) {
-  const shapeRef = useRef();
-
+  var shapeRef = useRef();
   const handleClick = useCallback(
     (event) => {
       const nrwidth = prompt("Enter new width: ")
@@ -17,9 +16,10 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
+
   const handleDrag = useCallback(
     (event) => {
-      moveShape(id, event);
+      moveShape(id, event.target.x(), event.target.y());
     },
     [id]
   );
@@ -34,11 +34,12 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
  
       onDragEnd={handleDrag}
         dragBoundFunc = {(pos) => {
+        
           return {
             // limit drag bounds for rectangles
             //TODO: replace instances of 500 with dynamic canvas size
-            x: ((pos.x + shapeRef.current.width() < 500 && pos.x > 0) ? pos.x : ((pos.x + shapeRef.current.width()  > 500) ? Math.min(pos.x, 500 - shapeRef.current.width()) : Math.max(pos.x, 0))),
-            y: ((pos.y  + shapeRef.current.height() < 500 && pos.y > 0) ? pos.y : ((pos.y + shapeRef.current.height() > 500) ? Math.min(pos.y, 500 - shapeRef.current.height()) : Math.max(pos.y, 0))),
+            x: ((pos.x + Number(shapeProps.width) < shapeProps.cbw && pos.x > 0) ? pos.x : ((pos.x + Number(shapeProps.width)  > shapeProps.cbw) ? Math.min(pos.x, shapeProps.cbw - Number(shapeProps.width)) : Math.max(pos.x, 0))),
+            y: ((pos.y  + Number(shapeProps.height) < shapeProps.cbh && pos.y > 0) ? pos.y : ((pos.y + Number(shapeProps.height) > shapeProps.cbh) ? Math.min(pos.y, shapeProps.cbh - Number(shapeProps.height)) : Math.max(pos.y, 0))),
           };
         }}>
       <Rect

@@ -13,7 +13,6 @@ const handleDragOver = (event) => event.preventDefault();
 
 export function Canvas() {
   const shapes = useShapes((state) => Object.entries(state.shapes));
-
   const stageRef = useRef();
 
   return (
