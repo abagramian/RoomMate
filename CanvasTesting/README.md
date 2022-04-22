@@ -54,5 +54,11 @@ While working on the above items, I ran into some roadblocks.
 * We need a JSON file containing information for preset RPI Dorm layouts that can be read into the canvas. These would serve as a convenience to the user so that they can easily work around objects that will be there when they move in, such as beds and desks. 
 
 
+**Misc Cleanup to be done**
+
+* Make "CANVASID" a constant instead of referencing it by string
+* Make APP_NAMESPACE + "CanvasBorder" a constant
+* Add clarifying comments
+
 
 
