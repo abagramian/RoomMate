@@ -2,7 +2,7 @@
 <!--  have to figure out how to crop the picture to look more presentable -->
 
 #### Join us in learning React!
-We created this project as an opportunity to learn relevant technologies that we never had a chance to learn, like React and Firebase. 
+We created this project as an opportunity to learn relevant technologies that we never had a chance to learn, like React and Firebase, and improve our ability to document technically.
 
 #### Your best mate for planning your future room at RPI!
 RoomMate is a web-application project that serves as a utility for RPI students to customize the layout of their dorm room. Users will have the flexibility to collaboratively use a drag and drop functionality to arrange preset furniture items on the canvas. 
@@ -15,13 +15,11 @@ RoomMate is a web-application project that serves as a utility for RPI students 
 * Changes are visible in realtime
 * Open-source, free to use, install on your own hardware
 
-
 ### Run RoomMate On Local Machine
 * Clone repository locally
 * Ensure you have the latest version of `npm`
 * Run `npm install` to install required modules
 * Run `npm start`
-
 
 ### Current Status of Application
 **4/18/2022**  Currently, we have a base project initialized and a home page, ready to be built on. The drag and drop canvas and checklist page are in progress. We have a database planned for future implementation, but current scope will only allow for local storage of 1 canvas. 
@@ -31,8 +29,18 @@ RoomMate is a web-application project that serves as a utility for RPI students 
 **STILL IN EARLY STAGES OF DEVELOPMENT**  
 To-do checklist implementation - branch: main-test  
 Drag & drop canvas implementation - branch: canvas  
+Continuous Integration & Automated Testing - branch: github-action-test
 
 ### How To Contribute
- Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+ Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.   
+ Public Discussion Forum for comments/suggestions: https://forms.gle/JukdCZpSVd6ucQxm9   
+ Learn more on our public website: https://abagramian.github.io/RoomMate/
+ 
+### Project Structure
+ License: https://github.com/abagramian/RoomMate/blob/main/LICENSE  
+ Issue Tracker: https://github.com/abagramian/RoomMate/issues  
+ Code of Conduct: https://github.com/abagramian/RoomMate/blob/main/CODE_OF_CONDUCT.md  
+ Style Guidelines: https://github.com/abagramian/RoomMate/blob/main/STYLE_GUIDELINES.md  
+ Testing Infrastructure: https://github.com/abagramian/RoomMate/actions   
  
  Welcome to RoomMate!
