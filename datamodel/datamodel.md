@@ -66,4 +66,8 @@ A feature being implemented is the "To-Get List". User lists have a List ID (doc
 List items are different than items that can be placed inside rooms, so there is a separate collection for them. List items have an ID (document ID) as well as a name, the list ID in which the item occurs, and a boolean that denotes whether the item is checked off or not.
 
 ## A note on switching to Firebase
-We have decided to use Firebase instead of SQLite (as originaly planned) because Firebase is designed to be easily integrated into JavaScript projects. Additionally, Firebase has useful features such as authentication.
+We have decided to use Firebase instead of SQLite (as originally planned) because Firebase is designed to be easily integrated into JavaScript projects.
+Moreover, the Firebase API is able to synchronize application data across different platforms, such as iOS, Android, and Web.
+Therefore, it is ideal since users will be able to login into their RoomMate account through any device that they use and retain the same consistency whether it is on Mobile or Web.
+Additionally, Firebase has useful features such as authentication.
+The authentication feature supports multiple identity providers, providing flexibility to our users in providing multiple options to login with.
