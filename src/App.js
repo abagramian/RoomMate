@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState } from 'react';
-import { BrowserRouter, Router, Navigate, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Router, Navigate, Routes, Route, Link, NavLink } from 'react-router-dom'
 import Layout from './components/Layout'
 // import Dashboard from './components/Dashboard/Dashboard';
 // import Preferences from './components/Preferences/Preferences';
@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 // import MainPage from './components/MainPage';
 // import LoginPage from './pages/LoginPage';
 // import NotFound404 from './pages/NotFound404';
+import RoomMateLogo from './assets/images/RoomMateLogo.png'
 
 function App() {
 // const App = () => {
@@ -43,6 +44,9 @@ function App() {
       {(user.email != "") ? (
         <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
+          <Link className='logo' to='/home'>
+            <img src={RoomMateLogo} alt="logo" />
+          </Link>
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (
