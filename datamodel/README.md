@@ -5,4 +5,5 @@ RoomMate will use Firebase to host its database. For more information on the dat
 How to Link Database?
 
 These are resources on how to link the database: https://github.com/JSneak/firebase-tutorial
-(4/21/2022 Update) So far, we have created the databse into Firebase
+
+(4/21/2022 Update) So far, we have created the database in Google Firebase. Looking to integrate with the frontend.
