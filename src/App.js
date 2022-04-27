@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Router, Navigate, Routes, Route, Link, NavLink } from 'react-router-dom'
 import Layout from './components/Layout'
 // import Dashboard from './components/Dashboard/Dashboard';
 // import Preferences from './components/Preferences/Preferences';
@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 // import MainPage from './components/MainPage';
 // import LoginPage from './pages/LoginPage';
 // import NotFound404 from './pages/NotFound404';
+import RoomMateLogo from './assets/images/RoomMateLogo.png'
 
 function App() {
 // const App = () => {
@@ -43,18 +44,32 @@ function App() {
       {(user.email != "") ? (
         <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
+          <Link className='logo' to='/home'>
+            <img src={RoomMateLogo} alt="logo" />
+          </Link>
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
       )}
+
     </div>
 
     // <>
-    // <Routes>
-    //   <Route path="/home" element={<Layout />} />
-    //   <Route path="/login" element={<LoginForm />} />
-    // </Routes>
+    //   {/* <Router> */}
+    //     <Routes>
+    //       <Route path="/" component={<Layout />} />
+    //       <Route path="/login" element={<LoginForm Login={Login} error={error} />} />
+    //       {/* <Navigate to="/" /> */}
+    //     </Routes>
+    //   {/* </Router> */}
+    // </>
+
+    // <>
+    //   <Routes>
+    //     <Route path="/home" element={<Layout />} />
+    //     <Route path="/login" element={<LoginForm />} />
+    //   </Routes>
     // </>
   );
 }
