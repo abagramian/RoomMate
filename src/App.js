@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Router, Navigate, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 // import Dashboard from './components/Dashboard/Dashboard';
 // import Preferences from './components/Preferences/Preferences';
@@ -48,13 +48,24 @@ function App() {
       ) : (
         <LoginForm Login={Login} error={error} />
       )}
+
     </div>
 
     // <>
-    // <Routes>
-    //   <Route path="/home" element={<Layout />} />
-    //   <Route path="/login" element={<LoginForm />} />
-    // </Routes>
+    //   {/* <Router> */}
+    //     <Routes>
+    //       <Route path="/" component={<Layout />} />
+    //       <Route path="/login" element={<LoginForm Login={Login} error={error} />} />
+    //       {/* <Navigate to="/" /> */}
+    //     </Routes>
+    //   {/* </Router> */}
+    // </>
+
+    // <>
+    //   <Routes>
+    //     <Route path="/home" element={<Layout />} />
+    //     <Route path="/login" element={<LoginForm />} />
+    //   </Routes>
     // </>
   );
 }
